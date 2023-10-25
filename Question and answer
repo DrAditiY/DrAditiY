@@ -1,0 +1,26 @@
+Question 1:
+
+The optimal value of alpha for Ridge and Lasso regression is typically determined through techniques like cross-validation. Alpha controls the strength of regularization in these models. If you double the value of alpha for both Ridge and Lasso, the model will become more regularized, leading to a simpler model with smaller coefficient values.
+
+In Lasso, doubling alpha will encourage more coefficients to become exactly zero, performing feature selection. In Ridge, the coefficients will become smaller but not necessarily zero.
+
+The most important predictor variables after the change depends on the specific dataset and the data's underlying relationships. Generally, the most important variables are those with the largest absolute coefficients in the regularized models.
+
+Question 2:
+
+The choice between Ridge and Lasso regression depends on the specific problem and dataset. If the dataset has many features, some of which are believed to be less important, Lasso is a good choice because it performs feature selection. If you want to retain all features and prevent multicollinearity, Ridge is a better option. The choice should be based on the problem's requirements and domain knowledge.
+
+Question 3:
+
+If the five most important predictor variables in the Lasso model are not available in the incoming data, you will need to create another model excluding those variables. The five most important predictor variables in this new model will be the next most important variables in terms of their coefficient magnitudes.
+
+Question 4:
+
+To ensure a model is robust and generalizable, you can:
+
+Use cross-validation techniques to assess the model's performance on different subsets of the data.
+Collect a diverse and representative dataset to train and test the model.
+Regularize the model (e.g., Ridge or Lasso regression) to prevent overfitting.
+Include a variety of relevant features to capture the complexity of the problem.
+Validate the model's performance on unseen data to ensure it generalizes well.
+A more robust and generalizable model might have slightly lower accuracy on the training data but is more likely to perform well on new, unseen data. It avoids overfitting and captures the underlying patterns rather than noise.
