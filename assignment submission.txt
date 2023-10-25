@@ -1,0 +1,116 @@
+
+
+@@ -17026,46 +17026,17 @@
+    "ridgenewdb.fit(X_train2, y_train) "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Lasso with double alpha value on new model with removed predictors"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 439,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "Lasso(alpha=0.002)"
+      ]
+     },
+     "execution_count": 439,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "alpha =0.002\n",
+    "lassonewdb = Lasso(alpha=alpha)\n",
+    "lassonewdb.fit(X_train2, y_train) "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "execution_count": 447,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0.9306030436827716\n",
+      "0.8879901850506591\n"
+      "0.9181493993898664\n",
+      "0.8752988660255734\n"
+     ]
+    }
+   ],
+@@ -17082,46 +17053,36 @@
+    "r2_test_lr = r2_score(y_test, y_pred_test)\n",
+    "print(r2_test_lr)\n",
+    "metric3.append(r2_test_lr)\n",
+    "\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Lasso with double alpha value on new model with removed predictors"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "execution_count": 439,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "C:\\Users\\geral\\AppData\\Local\\Temp\\ipykernel_3484\\53621929.py:3: UserWarning: Pandas doesn't allow columns to be created via a new attribute name - see https://pandas.pydata.org/pandas-docs/stable/indexing.html#attribute-access\n",
+      "  betasdbrd.rows = X_train.columns\n"
+     ]
+    },
+    {
+     "ename": "ValueError",
+     "evalue": "Length of values (1) does not match length of index (211)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[1;31mValueError\u001b[0m                                Traceback (most recent call last)",
+      "\u001b[1;32mc:\\Users\\geral\\Documents\\upgrad\\course4module1advreg\\advregassignment\\advreg_GBengsch.ipynb Cell 187'\u001b[0m in \u001b[0;36m<module>\u001b[1;34m\u001b[0m\n\u001b[0;32m      <a href='vscode-notebook-cell:/c%3A/Users/geral/Documents/upgrad/course4module1advreg/advregassignment/advreg_GBengsch.ipynb#ch0000215?line=1'>2</a>\u001b[0m betasdbrd \u001b[39m=\u001b[39m pd\u001b[39m.\u001b[39mDataFrame(index\u001b[39m=\u001b[39mX_train2\u001b[39m.\u001b[39mcolumns)\n\u001b[0;32m      <a href='vscode-notebook-cell:/c%3A/Users/geral/Documents/upgrad/course4module1advreg/advregassignment/advreg_GBengsch.ipynb#ch0000215?line=2'>3</a>\u001b[0m betasdbrd\u001b[39m.\u001b[39mrows \u001b[39m=\u001b[39m X_train\u001b[39m.\u001b[39mcolumns\n\u001b[1;32m----> <a href='vscode-notebook-cell:/c%3A/Users/geral/Documents/upgrad/course4module1advreg/advregassignment/advreg_GBengsch.ipynb#ch0000215?line=3'>4</a>\u001b[0m betasdbrd[\u001b[39m'\u001b[39m\u001b[39mRidge new double alpha\u001b[39m\u001b[39m'\u001b[39m] \u001b[39m=\u001b[39m ridgenewdb\u001b[39m.\u001b[39mcoef_\n\u001b[0;32m      <a href='vscode-notebook-cell:/c%3A/Users/geral/Documents/upgrad/course4module1advreg/advregassignment/advreg_GBengsch.ipynb#ch0000215?line=4'>5</a>\u001b[0m pd\u001b[39m.\u001b[39mset_option(\u001b[39m'\u001b[39m\u001b[39mdisplay.max_rows\u001b[39m\u001b[39m'\u001b[39m, \u001b[39mNone\u001b[39;00m)\n\u001b[0;32m      <a href='vscode-notebook-cell:/c%3A/Users/geral/Documents/upgrad/course4module1advreg/advregassignment/advreg_GBengsch.ipynb#ch0000215?line=5'>6</a>\u001b[0m betasdbrd\u001b[39m.\u001b[39msort_values(by\u001b[39m=\u001b[39m[\u001b[39m'\u001b[39m\u001b[39mRidge new double alpha\u001b[39m\u001b[39m'\u001b[39m], ascending\u001b[39m=\u001b[39m\u001b[39mFalse\u001b[39;00m)\n",
+      "File \u001b[1;32m~\\.virtualenvs\\Prep-gSb9PLii\\lib\\site-packages\\pandas\\core\\frame.py:3656\u001b[0m, in \u001b[0;36mDataFrame.__setitem__\u001b[1;34m(self, key, value)\u001b[0m\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3652'>3653</a>\u001b[0m     \u001b[39mself\u001b[39m\u001b[39m.\u001b[39m_setitem_array([key], value)\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3653'>3654</a>\u001b[0m \u001b[39melse\u001b[39;00m:\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3654'>3655</a>\u001b[0m     \u001b[39m# set column\u001b[39;00m\n\u001b[1;32m-> <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3655'>3656</a>\u001b[0m     \u001b[39mself\u001b[39;49m\u001b[39m.\u001b[39;49m_set_item(key, value)\n",
+      "File \u001b[1;32m~\\.virtualenvs\\Prep-gSb9PLii\\lib\\site-packages\\pandas\\core\\frame.py:3833\u001b[0m, in \u001b[0;36mDataFrame._set_item\u001b[1;34m(self, key, value)\u001b[0m\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3822'>3823</a>\u001b[0m \u001b[39mdef\u001b[39;00m \u001b[39m_set_item\u001b[39m(\u001b[39mself\u001b[39m, key, value) \u001b[39m-\u001b[39m\u001b[39m>\u001b[39m \u001b[39mNone\u001b[39;00m:\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3823'>3824</a>\u001b[0m     \u001b[39m\"\"\"\u001b[39;00m\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3824'>3825</a>\u001b[0m \u001b[39m    Add series to DataFrame in specified column.\u001b[39;00m\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3825'>3826</a>\u001b[0m \n\u001b[1;32m   (...)\u001b[0m\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3830'>3831</a>\u001b[0m \u001b[39m    ensure homogeneity.\u001b[39;00m\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3831'>3832</a>\u001b[0m \u001b[39m    \"\"\"\u001b[39;00m\n\u001b[1;32m-> <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3832'>3833</a>\u001b[0m     value \u001b[39m=\u001b[39m \u001b[39mself\u001b[39;49m\u001b[39m.\u001b[39;49m_sanitize_column(value)\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3834'>3835</a>\u001b[0m     \u001b[39mif\u001b[39;00m (\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3835'>3836</a>\u001b[0m         key \u001b[39min\u001b[39;00m \u001b[39mself\u001b[39m\u001b[39m.\u001b[39mcolumns\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3836'>3837</a>\u001b[0m         \u001b[39mand\u001b[39;00m value\u001b[39m.\u001b[39mndim \u001b[39m==\u001b[39m \u001b[39m1\u001b[39m\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3837'>3838</a>\u001b[0m         \u001b[39mand\u001b[39;00m \u001b[39mnot\u001b[39;00m is_extension_array_dtype(value)\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3838'>3839</a>\u001b[0m     ):\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3839'>3840</a>\u001b[0m         \u001b[39m# broadcast across multiple columns if necessary\u001b[39;00m\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=3840'>3841</a>\u001b[0m         \u001b[39mif\u001b[39;00m \u001b[39mnot\u001b[39;00m \u001b[39mself\u001b[39m\u001b[39m.\u001b[39mcolumns\u001b[39m.\u001b[39mis_unique \u001b[39mor\u001b[39;00m \u001b[39misinstance\u001b[39m(\u001b[39mself\u001b[39m\u001b[39m.\u001b[39mcolumns, MultiIndex):\n",
+      "File \u001b[1;32m~\\.virtualenvs\\Prep-gSb9PLii\\lib\\site-packages\\pandas\\core\\frame.py:4537\u001b[0m, in \u001b[0;36mDataFrame._sanitize_column\u001b[1;34m(self, value)\u001b[0m\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=4533'>4534</a>\u001b[0m     \u001b[39mreturn\u001b[39;00m _reindex_for_setitem(value, \u001b[39mself\u001b[39m\u001b[39m.\u001b[39mindex)\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=4535'>4536</a>\u001b[0m \u001b[39mif\u001b[39;00m is_list_like(value):\n\u001b[1;32m-> <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=4536'>4537</a>\u001b[0m     com\u001b[39m.\u001b[39;49mrequire_length_match(value, \u001b[39mself\u001b[39;49m\u001b[39m.\u001b[39;49mindex)\n\u001b[0;32m   <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/frame.py?line=4537'>4538</a>\u001b[0m \u001b[39mreturn\u001b[39;00m sanitize_array(value, \u001b[39mself\u001b[39m\u001b[39m.\u001b[39mindex, copy\u001b[39m=\u001b[39m\u001b[39mTrue\u001b[39;00m, allow_2d\u001b[39m=\u001b[39m\u001b[39mTrue\u001b[39;00m)\n",
+      "File \u001b[1;32m~\\.virtualenvs\\Prep-gSb9PLii\\lib\\site-packages\\pandas\\core\\common.py:557\u001b[0m, in \u001b[0;36mrequire_length_match\u001b[1;34m(data, index)\u001b[0m\n\u001b[0;32m    <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/common.py?line=552'>553</a>\u001b[0m \u001b[39m\"\"\"\u001b[39;00m\n\u001b[0;32m    <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/common.py?line=553'>554</a>\u001b[0m \u001b[39mCheck the length of data matches the length of the index.\u001b[39;00m\n\u001b[0;32m    <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/common.py?line=554'>555</a>\u001b[0m \u001b[39m\"\"\"\u001b[39;00m\n\u001b[0;32m    <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/common.py?line=555'>556</a>\u001b[0m \u001b[39mif\u001b[39;00m \u001b[39mlen\u001b[39m(data) \u001b[39m!=\u001b[39m \u001b[39mlen\u001b[39m(index):\n\u001b[1;32m--> <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/common.py?line=556'>557</a>\u001b[0m     \u001b[39mraise\u001b[39;00m \u001b[39mValueError\u001b[39;00m(\n\u001b[0;32m    <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/common.py?line=557'>558</a>\u001b[0m         \u001b[39m\"\u001b[39m\u001b[39mLength of values \u001b[39m\u001b[39m\"\u001b[39m\n\u001b[0;32m    <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/common.py?line=558'>559</a>\u001b[0m         \u001b[39mf\u001b[39m\u001b[39m\"\u001b[39m\u001b[39m(\u001b[39m\u001b[39m{\u001b[39;00m\u001b[39mlen\u001b[39m(data)\u001b[39m}\u001b[39;00m\u001b[39m) \u001b[39m\u001b[39m\"\u001b[39m\n\u001b[0;32m    <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/common.py?line=559'>560</a>\u001b[0m         \u001b[39m\"\u001b[39m\u001b[39mdoes not match length of index \u001b[39m\u001b[39m\"\u001b[39m\n\u001b[0;32m    <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/common.py?line=560'>561</a>\u001b[0m         \u001b[39mf\u001b[39m\u001b[39m\"\u001b[39m\u001b[39m(\u001b[39m\u001b[39m{\u001b[39;00m\u001b[39mlen\u001b[39m(index)\u001b[39m}\u001b[39;00m\u001b[39m)\u001b[39m\u001b[39m\"\u001b[39m\n\u001b[0;32m    <a href='file:///c%3A/Users/geral/.virtualenvs/Prep-gSb9PLii/lib/site-packages/pandas/core/common.py?line=561'>562</a>\u001b[0m     )\n",
+      "\u001b[1;31mValueError\u001b[0m: Length of values (1) does not match length of index (211)"
+     ]
+     "data": {
+      "text/plain": [
+       "Lasso(alpha=0.002)"
+      ]
+     },
+     "execution_count": 439,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#important predictor variables\n",
+    "betasdbrd = pd.DataFrame(index=X_train2.columns)\n",
+    "betasdbrd.rows = X_train.columns\n",
+    "betasdbrd['Ridge new double alpha'] = ridgenewdb.coef_\n",
+    "pd.set_option('display.max_rows', None)\n",
+    "betasdbrd.sort_values(by=['Ridge new double alpha'], ascending=False)"
+    "alpha =0.002\n",
+    "lassonewdb = Lasso(alpha=alpha)\n",
+    "lassonewdb.fit(X_train2, y_train) "
+   ]
